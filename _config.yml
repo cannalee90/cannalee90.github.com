@@ -11,4 +11,3 @@ github_username:  cannalee90
 
 # Build settings
 markdown: kramdown
-  syntax_highlighter: rouge
