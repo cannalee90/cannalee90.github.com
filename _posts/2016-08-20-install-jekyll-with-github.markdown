@@ -19,3 +19,14 @@ categories: jekyll
 font를 `noto sans`와 `open sans`를 사용하기 위해서 [css파일](https://gist.github.com/cannalee90/97f0d30643f570c1c637b2c639d99b54)을 추가하고 적용시킨다.
 
 각종 css 파일을 수정하면 완성!
+
+이미지 파일을 반응형으로 만들기 위해서는 추가할때는 아래와 같은 css를 추가하고 이를 이미지 태그에 매번 추가해주면 된다.
+
+~~~
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+![my-image](http://){:class="img-responsive"}
+~~~
