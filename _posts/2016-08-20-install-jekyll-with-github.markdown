@@ -30,3 +30,39 @@ font를 `noto sans`와 `open sans`를 사용하기 위해서 [css파일](https:/
 
 ![my-image](http://){:class="img-responsive"}
 ~~~
+
+구글 애널리스틱은 다른 사이트에서 설치 하듯 똑같이 코드를 발급받는다. 그리고 모든 페이지에서 그 스크립트를 추가하기 위해서 `_includes` 폴더에 새롭게 html파일을 만들어준다.
+
+~~~
+script.html
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'USER-ID', 'auto');
+  ga('send', 'pageview');
+</script>
+
+~~~
+
+그리고 공통적으로 포함되는 레이아웃에 다음과 같이 스크립트 파일을 추가한다.
+
+```text
+{% raw %}
+{% include head.html %}
+{% endraw %}
+```
+
+그리고 개발자 도구를 열어서 확인하면 다음과 같이 올라간걸 확인 할 수 있다.
+
+![](http://i.imgur.com/tVa4Qu8.png)
+
+중괄호를 이스케입 하기 위해서는 다음과 같이 사용하면 된다.
+
+```text
+{{ "{% raw " }}%}
+{{ "{% endraw " }}%}
+```
